@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="./ToDo.css">
+
+</head>
+<body>
+<div>
+    <h3>My To Do List</h3>
+    <input type="text" id="myInput" placeholder="Type...">
+    <span onclick="newElement()" class="addBtn">Add</span>
+</div> 
+    <ul id="myul">
+        <li><input type="checkbox"/>Learn JavaScript </li>
+        <li><input type="checkbox"/>Make a To Do list </li>
+        <li><input type="checkbox"/>Use CSS to make it look pretty </li>
+    </ul>
+
+
+<script>
+function newElement() {
+    // Create li element
+    var li = document.createElement("li");
+
+    // Create input element and append to li
+    var input = document.createElement("input");
+    input.type = "checkbox";
+    li.appendChild(input);
+
+    // Create dl element and append to li
+    var dl = document.createElement("dl");
+    li.appendChild(dl)
+    
+    // Create text node and append to li
+    var inputValue = document.getElementById("myInput").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    {
+        document.getElementById("myul").appendChild(li);
+    }
+    document.getElementById("myInput").value = "";
+}
+
+</script>
+</body>
+</html>
